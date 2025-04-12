@@ -78,3 +78,12 @@ Here are some screenshots of the SAP CAP MCP Server in action:
 Watch our demo to see how to use the SAP CAP MCP Server:
 
 [SAP CAP MCP Server Demo](./docs/sap-cap-mcp-demo.mp4)
+
+## Docker build, tag, upload
+
+```
+docker tag sap-cap-mcp-tools radu103/sap-cap-mcp-tools:latest
+docker tag sap-cap-mcp-tools radu103/sap-cap-mcp-tools:0.0.1
+docker push radu103/sap-cap-mcp-tools:latest
+docker push radu103/sap-cap-mcp-tools:0.0.1
+```

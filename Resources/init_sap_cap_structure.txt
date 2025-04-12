@@ -1,9 +1,10 @@
 
-Strict Instructions ofr running task steps:
+Strict Instructions for running task steps:
     0.1. use exact commands described below
     0.2. Do not use "cd" command, assume current folder
     0.3. using Powershell or CMD compatible commands
     0.4. run commands one by one in sequence
+
 Tasks Steps to run:
 1. Check for package.json file 
     1.1. run "cds init" if not found 

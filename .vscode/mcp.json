@@ -1,17 +1,8 @@
 {
     "servers": {
-        "mcp-sap-cap-server-2": {
-            "type": "stdio",
-            "command": "dotnet",
-            "args": [
-                "run",
-                "--project",
-                "D:/Work/sap-cap-mcp"
-            ]
-        },
         "my-mcp-server-e8e36959": {
             "type": "sse",
-            "url": "http://localhost:8080/"
+            "url": "http://localhost:21210/"
         }
     }
 }
