@@ -34,18 +34,13 @@ namespace SAPCAPTools.Tests
                     Description = "Product description" 
                 }
             };
-            
-            var entityAssociations = new List<string>();
-            var existingEntities = new List<string>();
 
             // Act
             string result = GenerateSAPCAPEntityTool.GenerateSAPCAPEntity(
                 entityName, 
                 entityIsManaged, 
                 entityDescription, 
-                entityProperties, 
-                entityAssociations,
-                existingEntities);
+                entityProperties);
 
             // Assert
             Assert.IsTrue(result.Contains("/* Products available in the shop */"));
@@ -78,18 +73,13 @@ namespace SAPCAPTools.Tests
                     Description = "Price amount" 
                 }
             };
-            
-            var entityAssociations = new List<string>();
-            var existingEntities = new List<string>();
 
             // Act
             string result = GenerateSAPCAPEntityTool.GenerateSAPCAPEntity(
                 entityName, 
                 entityIsManaged, 
                 entityDescription, 
-                entityProperties, 
-                entityAssociations,
-                existingEntities);
+                entityProperties);
 
             // Assert
             Assert.IsTrue(result.Contains("/* Product prices */"));
@@ -125,13 +115,18 @@ namespace SAPCAPTools.Tests
             var existingEntities = new List<string> { "Customer" };
 
             // Act
-            string result = GenerateSAPCAPEntityTool.GenerateSAPCAPEntity(
+            string entityResult = GenerateSAPCAPEntityTool.GenerateSAPCAPEntity(
                 entityName, 
                 entityIsManaged, 
                 entityDescription, 
-                entityProperties, 
+                entityProperties);
+                
+            string associationsResult = GenerateSAPCAPEntityTool.GenerateSAPCAPEntityAssociations(
+                entityName,
                 entityAssociations,
                 existingEntities);
+                
+            string result = entityResult + associationsResult;
 
             // Assert
             Assert.IsTrue(result.Contains("/* Customer orders */"));
@@ -161,18 +156,13 @@ namespace SAPCAPTools.Tests
                     IsNullable = true
                 }
             };
-            
-            var entityAssociations = new List<string>();
-            var existingEntities = new List<string>();
 
             // Act
             string result = GenerateSAPCAPEntityTool.GenerateSAPCAPEntity(
                 entityName, 
                 entityIsManaged, 
                 entityDescription, 
-                entityProperties, 
-                entityAssociations,
-                existingEntities);
+                entityProperties);
 
             // Assert
             Assert.IsTrue(result.Contains("/* Test entity without managed aspect */"));
@@ -200,18 +190,13 @@ namespace SAPCAPTools.Tests
                     Description = "Rating score" 
                 }
             };
-            
-            var entityAssociations = new List<string>();
-            var existingEntities = new List<string>();
 
             // Act
             string result = GenerateSAPCAPEntityTool.GenerateSAPCAPEntity(
                 entityName, 
                 entityIsManaged, 
                 entityDescription, 
-                entityProperties, 
-                entityAssociations,
-                existingEntities);
+                entityProperties);
 
             // Assert
             Assert.IsTrue(result.Contains("/* Product ratings */"));

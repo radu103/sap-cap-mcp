@@ -1,0 +1,10 @@
+services:
+  tools:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "21210:21210"  # HTTP port
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    restart: unless-stopped

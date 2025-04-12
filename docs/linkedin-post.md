@@ -19,4 +19,4 @@ This tool revolutionizes SAP Cloud Application Programming (CAP) development by 
 
 If you're working with SAP CAP or interested in modern development tooling, I'd love your feedback! Check out the GitHub repository: [link]('https://github.com/radu103/sap-cap-mcp')
 
-#SAPDevelopment #CloudApplicationProgramming #DeveloperTools #OpenSource #SAP #CAP #ModelContextProtocol #AI #MCPtool #BTP #SAPBTP
+#SAPDevelopment #CloudApplicationProgramming #DeveloperTools #OpenSource #SAP #CAP #ModelContextProtocol #AI #MCPTool #BTP #SAPBTP #Copilot #VibeCoding
