@@ -37,74 +37,44 @@ Follow these steps to deploy the SAP CAP MCP server as a self-contained local ex
    cp ./bin/Release/net8.0/win-x64/publish/appsettings.json ./deploy
    ```
 
-3. **Find the executable**
+By default, the server runs on port 21210, change config for other port
 
-   The executable will be generated in the `bin/Release/net8.0/{runtime-identifier}/publish/` directory.
+# Prompts
 
-   - Windows: `sap-cap-mcp.exe`
-   - macOS/Linux: `sap-cap-mcp`
+Work with these sample prompts
 
-4. **Make executable (macOS/Linux only)**
+1. `instruction for sap cap development`
+2. `init sap cap structure`
+3. `create 1 entity Product and expose it in cds service using tools`
+4. `start sap cap cds development`
 
-   ```bash
-   chmod +x bin/Release/net8.0/linux-x64/publish/sap-cap-mcp
-   ```
+# Add MCP Tool Server code
 
-### Running the Server
-
-Run the executable directly:
-
-```bash
-# Windows
-.\bin\Release\net8.0\win-x64\publish\sap-cap-mcp.exe
-
-# macOS/Linux
-./bin/Release/net8.0/linux-x64/publish/sap-cap-mcp
+Run `sap-cap-mcp.exe`
+In .vscode/mcp.json file put and check all tools from the server
+```
+{
+    "servers": {
+        "my-mcp-server-1cdffd67": {
+            "type": "sse",
+            "url": "http://localhost:21210/"
+        }
+    }
+}
 ```
 
-Configure the server using environment variables or command-line parameters:
+# Media pictures and video
 
-```bash
-# Example with environment variables
-$env:ASPNETCORE_ENVIRONMENT="Production"
-$env:ASPNETCORE_URLS="http://localhost:5123"
-.\bin\Release\net8.0\win-x64\publish\sap-cap-mcp.exe
-```
+## Screenshots
 
-### Available Tools
+Here are some screenshots of the SAP CAP MCP Server in action:
 
-The SAP CAP MCP server provides the following tools:
+![Created CDS Schema with 1 Entity](./docs/entity.JPG)
+![Created CDS Service](./docs/service.JPG)
+![MCP Tool Server VSCode config](./docs/mcp_tool_server.JPG)
 
-1. **GenerateEmptySchema**
-   - Creates a new CDS schema file with proper namespace and imports
-   - Parameter: `namespace` - The namespace for your CDS schema
+## Demo
 
-2. **GenerateSAPCAPEntity**
-   - Creates a new entity definition for SAP CAP CDS
-   - Parameters:
-     - `entityName` - Name of the entity
-     - `entityDescription` - Description of the entity
-     - `entityIsManaged` - Whether the entity inherits from managed aspect
-     - `entityProperties` - Array of properties with type, length, etc.
-     - `entityAssociations` - Array of associations to other entities
+Watch our demo to see how to use the SAP CAP MCP Server:
 
-## Development
-
-To work on the SAP CAP MCP server:
-
-1. Clone the repository
-2. Open the solution in Visual Studio or VS Code
-3. Restore dependencies: `dotnet restore`
-4. Run the server: `dotnet run`
-
-## Testing
-
-Run the tests using:
-
-```bash
-dotnet test
-```
-
-## License
-
-[Specify your license information here]
+[SAP CAP MCP Server Demo](./docs/sap-cap-mcp-demo.mp4)
