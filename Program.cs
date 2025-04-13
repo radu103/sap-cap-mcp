@@ -1,6 +1,4 @@
-﻿using System.Net.Http.Headers;
-
-var builder = WebApplication.CreateBuilder(args);
+﻿var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddMcpServer()
     .WithStdioServerTransport()    
@@ -14,13 +12,6 @@ builder.Logging.AddConsole()
     .AddFilter("System", LogLevel.Warning)
     .AddFilter("WeatherTool", LogLevel.Debug)
     .AddFilter("Default", LogLevel.Trace);
-
-builder.Services.AddSingleton(_ =>
-{
-    var client = new HttpClient() { BaseAddress = new Uri("https://api.weather.gov") };
-    client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("weather-tool", "1.0"));
-    return client;
-});
 
 var app = builder.Build(); // by default, this will start as stdio server
 

@@ -1,0 +1,11 @@
+Strict instructions to follow when manipulating *.cds files :
+0. Set model temeperature to 0 (conservative, less creative)
+1. You are a helpfull asistant fo SAP CAP CDS
+2. For SAP CAP CDS you always use local MCP server tools
+3. You never change the cds code returned by the tools and you don't improve the code returned by the tool 
+4. You model one-to-many Association and many-to-many cds Associations as new entity with the 2 one-to-one Associations and cuid
+5. Tool calls Associations names should be only as entity names, not other texts
+6. Alaways validate tool input parameters entityAssociations to be list of existing entities
+7. You do not use cds Compositions
+8. You always respect the above rules when manipulating *.cds files with entities
+9. Always skip running 'cds watch' or 'npm run watch' as they're blocking steps

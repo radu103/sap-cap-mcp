@@ -1,0 +1,18 @@
+
+Strict Instructions ofr running task steps:
+    0.1. use exact commands described below
+    0.2. Do not use "cd" command, assume current folder
+    0.3. using Powershell or CMD compatible commands
+    0.4. run commands one by one in sequence
+Tasks Steps to run:
+1. Check for package.json file 
+    1.1. run "cds init" if not found 
+    1.2. create exact command "cds watch" script in scrips section of package.json
+2. Check for folder db
+    2.1. run "mkdir db" commmand if not found to create folder "db"
+3. Check for folder srv 
+    3.1. run "mkdir srv" commmand if not found to create folder "srv"
+4. Run "npm install" command for npm packages download
+5. Check for Readme.md file 
+    5.1. create Readme.md file if it does not exist 
+    5.2. include in Readme.md folder descriptions

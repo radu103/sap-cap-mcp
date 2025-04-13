@@ -10,6 +10,19 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.4" />
     <PackageReference Include="ModelContextProtocol" Version="0.1.0-preview.8" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\system_prompts.txt">
+      <LogicalName>SAPCAPTools.Resources.system_prompts.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\start_sap_cap_cds.txt">
+      <LogicalName>SAPCAPTools.Resources.start_sap_cap_cds.txt</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\init_sap_cap_structure.txt">
+      <LogicalName>SAPCAPTools.Resources.init_sap_cap_structure.txt</LogicalName>
+    </EmbeddedResource> 
   </ItemGroup>
 
 </Project>

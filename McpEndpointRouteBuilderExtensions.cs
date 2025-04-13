@@ -51,9 +51,12 @@ public static class McpEndpointRouteBuilderExtensions
         var optionsSnapshot = endpoints.ServiceProvider.GetRequiredService<IOptions<McpServerOptions>>();
         var optionsFactory = endpoints.ServiceProvider.GetRequiredService<IOptionsFactory<McpServerOptions>>();
         var hostApplicationLifetime = endpoints.ServiceProvider.GetRequiredService<IHostApplicationLifetime>();
-
+        
+        var logger = loggerFactory.CreateLogger(nameof(McpEndpointRouteBuilderExtensions));
+        logger.LogInformation("map MCP Server GET / endpoint");
+        logger.LogInformation("map MCP Server POST /message endpoint");
+        
         var routeGroup = endpoints.MapGroup(pattern);
-
         routeGroup.MapGet("/", async context =>
         {
             // If the server is shutting down, we need to cancel all SSE connections immediately without waiting for HostOptions.ShutdownTimeout

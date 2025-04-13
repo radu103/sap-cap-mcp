@@ -1,0 +1,4 @@
+Tasks steps and instructions :
+1. Run tool InstructionsForStartSAPCAPCDSDevelopment from local MCP Server
+2. Summarize InstructionsForStartSAPCAPCDSDevelopment result instructions
+3. Run tool SAPCAPCDSInitApplicationStructureTool from local MCP Server
